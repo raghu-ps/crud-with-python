@@ -47,7 +47,7 @@ def create():
 
   ser_data = user_schema.dump(user).data
 
-  return response_on_success(req_data, 201)
+  return response_on_success(ser_data, 201)
 
 @user_api.route('/<int:user_id>', methods=['PUT'])
 def update(user_id):
