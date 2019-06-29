@@ -219,6 +219,7 @@ RES:
 
 Purpose:Get a single book by id
 GET http://127.0.0.1:5000/api/v1/books/8
+
 RES:
 {
   "data": {
