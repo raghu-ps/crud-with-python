@@ -2,11 +2,17 @@
 This project uses SQLALCHEMY ORM with POSTGRESQL with flask FOR PERFORMING CRUD Operations
 Set the ENV variables:
 $ export FLASK_ENV=development
+
 $ export DATABASE_URL= postgres://name:password@houst:port/crud_api_db
+
 $ export JWT_SECRET_KEY = hhgaghhgsdhdhdd
+
 $ createdb crud_api_db
+
 $ python manage.py db init
+
 $ python manage.py db migrate
+
 
 Installations and Run the app:
 pipenv shell
