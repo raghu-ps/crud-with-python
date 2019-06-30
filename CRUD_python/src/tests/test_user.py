@@ -34,7 +34,7 @@ class UsersTest(unittest.TestCase):
     json_data = json.loads(res.data)
     self.assertEqual(res.status_code, 201)
 
-  def test_book_creation_with_existing_email(self):
+  def test_book_creation_with_existing_id(self):
     """ test book creation with already existing id"""
     res = self.client().post('/api/v1/books/', headers={'Content-Type': 'application/json'}, data=json.dumps(self.user))
     self.assertEqual(res.status_code, 400)
