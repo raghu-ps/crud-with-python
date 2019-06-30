@@ -59,7 +59,7 @@ class UsersTest(unittest.TestCase):
     self.assertEqual(res.status_code, 400)
 
   def test_book_creation_with_no_book_name(self):
-    """ test user creation with no email """
+    """ test user creation with no book name """
     user1 = {
                  "id":12,
                  "isbn": "456-987-0071",
@@ -84,13 +84,13 @@ class UsersTest(unittest.TestCase):
  
 
   def test_book_get_book(self):
-    """ Test User Get Me """
+    """ Test Get book """
     res = self.client().get('/api/v1/books/12', headers={'Content-Type': 'application/json'})
     json_data = json.loads(res.data)
     self.assertEqual(res.status_code, 200)
 
   def test_user_update_book(self):
-    """ Test User Update Me """
+    """ Test book Update book """
     user1 = {
                  "id":12,
                  "name":"Game of Thrones",
@@ -106,7 +106,7 @@ class UsersTest(unittest.TestCase):
     self.assertEqual(res.status_code, 200)
 
   def test_delete_book(self):
-    """ Test User Delete """
+    """ Test book Delete """
     api_token = json.loads(res.data).get('jwt_token')
     res = self.client().delete('/api/v1/books/12', headers={'Content-Type': 'application/json'})
     self.assertEqual(res.status_code, 204)
