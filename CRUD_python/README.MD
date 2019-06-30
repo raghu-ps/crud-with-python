@@ -1,6 +1,8 @@
 
 This project uses SQLALCHEMY ORM with POSTGRESQL with flask FOR PERFORMING CRUD Operations
+
 Set the ENV variables:
+
 $ export FLASK_ENV=development
 
 $ export DATABASE_URL= postgres://name:password@houst:port/crud_api_db
@@ -15,15 +17,22 @@ $ python manage.py db migrate
 
 
 Installations and Run the app:
+
 pipenv shell
+
 python run.py
 
 
+
 API's:
+
 Purpose: Create a Book in the DB
+
 POST : http://127.0.0.1:5000/api/v1/books/
 
+
 Body:
+
 {
     "authors": "Raghu",
     "country": "USA",
@@ -36,6 +45,7 @@ Body:
 }
 
 RES:
+
 {
   "data": {
     "authors": "Raghu",
@@ -50,13 +60,18 @@ RES:
   "status": "Success",
   "status_code": 201
 }
+
 Purpose: Update a existing Book in the DB
+
 PUT/Update : http://127.0.0.1:5000/api/v1/books/6
 
+
 BODY:
+
 {"authors": "Raghu", "country": "USA", "created_at": "2019-06-29T08:12:24.075104+00:00", "id": 6, "isbn": "456-987-9876", "modified_at": "2019-06-29T08:12:24.075104+00:00", "name": "Men are from Mars", "pages": "128", "publisher": "TATA_MCGRawHill", "release_date": "12/06/2012"}
 
 RES:
+
 {
   "authors": "Raghu",
   "country": "USA",
@@ -70,8 +85,11 @@ RES:
   "release_date": "12/06/2012"
 }
 
+
 Purpose: Delete a existing Book from DB
+
 DELETE: http://127.0.0.1:5000/api/v1/books/6
+
 
 RES:
 {
@@ -82,10 +100,14 @@ RES:
   "status_code": 201
 }
 
+
 Purpose: Get all books with meta data from DB
+
 GET http://127.0.0.1:5000/api/v1/books/
 
+
 RES:
+
 [
   {
     "authors": "Raghu",
@@ -185,9 +207,13 @@ RES:
   }
 ]
 
+
 Purpose:Hook to external Ice And Fire API and process the data to extract the relevant json objects
+
 GET http://127.0.0.1:5000/external-books?name=A Game of Thrones
+
 RES:
+
 {
   "data": [
     {
@@ -205,9 +231,13 @@ RES:
   "status": "Success",
   "status_code": 200
 }
+
 Purpose:Gracefully handle exceptions
+
 GET http://127.0.0.1:5000/external-books?name=A Game of Monkey
+
 RES:
+
 {
   "data": [],
   "status": "Success",
@@ -215,8 +245,11 @@ RES:
 }
 
 Purpose:Get a single book by id
+
 GET http://127.0.0.1:5000/api/v1/books/8
+
 RES:
+
 {
   "data": {
     "authors": "Raghu",
@@ -235,8 +268,11 @@ RES:
 }
 
 DB:
+
 The DB table name called user is created
+
 the table has below columns:
+
 CREATE TABLE crud_api_db.users(
    id INTEGER PRIMARY KEY,
    name VARCHAR (128) NOT NULL,
@@ -250,5 +286,7 @@ CREATE TABLE crud_api_db.users(
    modified_at TIMESTAMP
 );
 
+
 To Run test coverage:
+
 py.test --cov=src --cov-config .coveragerc
