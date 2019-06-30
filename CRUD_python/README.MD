@@ -16,7 +16,7 @@ $ python manage.py db init
 $ python manage.py db migrate
 
 
-Installations and Run the app:
+# Installations and Run the app:
 
 pipenv shell
 
@@ -24,14 +24,14 @@ python run.py
 
 
 
-API's:
+# API's:
 
-Purpose: Create a Book in the DB
+# Purpose: Create a Book in the DB
 
 POST : http://127.0.0.1:5000/api/v1/books/
 
 
-Body:
+# Body:
 
 {
     "authors": "Raghu",
@@ -44,7 +44,7 @@ Body:
     "release_date": "12/06/2012"
 }
 
-RES:
+# RES:
 
 {
   "data": {
@@ -61,16 +61,16 @@ RES:
   "status_code": 201
 }
 
-Purpose: Update a existing Book in the DB
+# Purpose: Update a existing Book in the DB
 
 PUT/Update : http://127.0.0.1:5000/api/v1/books/6
 
 
-BODY:
+# BODY:
 
 {"authors": "Raghu", "country": "USA", "created_at": "2019-06-29T08:12:24.075104+00:00", "id": 6, "isbn": "456-987-9876", "modified_at": "2019-06-29T08:12:24.075104+00:00", "name": "Men are from Mars", "pages": "128", "publisher": "TATA_MCGRawHill", "release_date": "12/06/2012"}
 
-RES:
+# RES:
 
 {
   "authors": "Raghu",
@@ -86,12 +86,12 @@ RES:
 }
 
 
-Purpose: Delete a existing Book from DB
+# Purpose: Delete a existing Book from DB
 
 DELETE: http://127.0.0.1:5000/api/v1/books/6
 
 
-RES:
+# RES:
 {
   "data": {
     "message": "deleted"
@@ -101,12 +101,12 @@ RES:
 }
 
 
-Purpose: Get all books with meta data from DB
+# Purpose: Get all books with meta data from DB
 
 GET http://127.0.0.1:5000/api/v1/books/
 
 
-RES:
+# RES:
 
 [
   {
@@ -208,11 +208,11 @@ RES:
 ]
 
 
-Purpose:Hook to external Ice And Fire API and process the data to extract the relevant json objects
+# Purpose:Hook to external Ice And Fire API and process the data to extract the relevant json objects
 
 GET http://127.0.0.1:5000/external-books?name=A Game of Thrones
 
-RES:
+# RES:
 
 {
   "data": [
@@ -232,11 +232,11 @@ RES:
   "status_code": 200
 }
 
-Purpose:Gracefully handle exceptions
+# Purpose:Gracefully handle exceptions
 
 GET http://127.0.0.1:5000/external-books?name=A Game of Monkey
 
-RES:
+# RES:
 
 {
   "data": [],
@@ -244,11 +244,11 @@ RES:
   "status_code": 200
 }
 
-Purpose:Get a single book by id
+# Purpose:Get a single book by id
 
 GET http://127.0.0.1:5000/api/v1/books/8
 
-RES:
+# RES:
 
 {
   "data": {
@@ -267,7 +267,7 @@ RES:
   "status_code": 201
 }
 
-DB:
+# DB:
 
 The DB table name called user is created
 
@@ -287,6 +287,6 @@ CREATE TABLE crud_api_db.users(
 );
 
 
-To Run test coverage:
+# To Run test coverage:
 
 py.test --cov=src --cov-config .coveragerc
