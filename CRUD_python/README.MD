@@ -1,7 +1,7 @@
 
 This project uses SQLALCHEMY ORM with POSTGRESQL with flask FOR PERFORMING CRUD Operations
 
-Set the ENV variables:
+# Set the ENV variables:
 
 $ export FLASK_ENV=development
 
