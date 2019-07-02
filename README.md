@@ -1,7 +1,7 @@
 # crud-with-python
 This project uses Flask with SQLALCHEMY ORM for performing CRUD operations on Postgresql DB
 
-This project uses SQLALCHEMY ORM with POSTGRESQL with flask FOR PERFORMING CRUD Operations
+This project uses SQLALCHEMY ORM with POSTGRESQL and flask FOR PERFORMING CRUD Operations
 Set the ENV variables:
 
 $ export FLASK_ENV=development
