@@ -1,5 +1,5 @@
 
-This project uses SQLALCHEMY ORM with POSTGRESQL with flask FOR PERFORMING CRUD Operations
+This project uses SQLALCHEMY ORM with POSTGRESQL and flask FOR PERFORMING CRUD Operations
 
 # Set the ENV variables:
 
