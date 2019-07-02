@@ -20,6 +20,8 @@ $ python manage.py db migrate
 
 pipenv shell
 
+pipenc install
+
 python run.py
 
 
