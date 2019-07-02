@@ -21,6 +21,8 @@ $ python manage.py db migrate
 
 pipenv shell
 
+pipenv install
+
 python run.py
 
 
