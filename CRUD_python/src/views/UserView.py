@@ -54,24 +54,32 @@ def update(user_id):
   """
   Update me
   """
-  req_data = request.get_json()
-  data, error = user_schema.load(req_data, partial=True)
-  if error:
-    return custom_response(error, 400)
+  try:
+     req_data = request.get_json()
+     data, error = user_schema.load(req_data, partial=True)
+     print("Data", data)
+     if error:
+      return custom_response(error, 400)
 
-  user = UserModel.get_one_user(user_id)
-  user.update(data)
-  ser_user = user_schema.dump(user).data
-  return custom_response(ser_user, 200)
+     user = UserModel.get_one_user(user_id)
+     print("USER", user)
+     user.update(data)
+     ser_user = user_schema.dump(user).data
+     return custom_response(ser_user, 200)
+  except:
+     return custom_response({'error': 'Book not found'}, 400)
 
 @user_api.route('/<int:user_id>', methods=['DELETE'])
 def delete(user_id):
   """
   Delete a user
   """
-  user = UserModel.get_one_user(user_id)
-  user.delete()
-  return response_on_success({'message': 'deleted'}, 201)
+  try:
+     user = UserModel.get_one_user(user_id)
+     user.delete()
+     return response_on_success({'message': 'deleted'}, 201)
+  except:
+     return custom_response({'error': 'Book not found'}, 400)
 
  
 @user_api.route('/<int:user_id>', methods=['GET'])
